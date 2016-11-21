@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="循环," />
 
 
 
@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="##关于我
-  目前小白一枚，喜欢逛街，喜欢看剧，也喜欢学习。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about me">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="lis[ i ].index = i;   //自定义索引
+1.for循环  ： 迭代数组对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="for跟for in循环的区别">
+<meta property="og:url" content="http://yoursite.com/2016/11/19/for跟for in循环/index.html">
 <meta property="og:site_name" content="xieling's Blog">
-<meta property="og:description" content="##关于我
-  目前小白一枚，喜欢逛街，喜欢看剧，也喜欢学习。">
-<meta property="og:updated_time" content="2016-11-19T09:29:49.133Z">
+<meta property="og:description" content="lis[ i ].index = i;   //自定义索引
+1.for循环  ： 迭代数组对象">
+<meta property="og:updated_time" content="2016-11-21T13:57:16.579Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about me">
-<meta name="twitter:description" content="##关于我
-  目前小白一枚，喜欢逛街，喜欢看剧，也喜欢学习。">
+<meta name="twitter:title" content="for跟for in循环的区别">
+<meta name="twitter:description" content="lis[ i ].index = i;   //自定义索引
+1.for循环  ： 迭代数组对象">
 
 
 
@@ -114,13 +114,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    about me | xieling's Blog
-  
-</title>
+  <title> for跟for in循环的区别 | xieling's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="English">
@@ -141,7 +135,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -231,11 +225,129 @@
 
   <div id="posts" class="posts-expand">
     
-    
-      <p>##关于我</p>
-<p>  目前小白一枚，喜欢逛街，喜欢看剧，也喜欢学习。</p>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                for跟for in循环的区别
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-11-19T22:01:51+08:00" content="2016-11-19">
+              2016-11-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>lis[ i ].index = i;   //自定义索引</p>
+<p>1.for循环  ： 迭代数组对象</p>
+<a id="more"></a>
+<p>2.for in循环： 用来迭代对象的属性或数组的每个元素，for…in循环中的循环计数器是字符串，而不是数字。它包含当前属性的名称或当前数组元素的索引<br> – 当遍历一个对象的时候，变量 i 也就是循环计数器 为 对象的属性名<br> – 当遍历一个数组的时候，变量 i 也就是循环计数器 为 当前数组元素的索引<br>                                   注意：<br>var array =[“admin”,”manager”,”db”];<br>//给Array的原型添加一个name属性<br>Array.prototype.name= “zhangsan”;<br>for(var i in array){<br>alert(array[i]);<br>} </p>
+<p>运行结果：<br>admin<br>manager<br>db<br>zhangsan </p>
+<p>现在，再看看使用 for循环会怎样？<br>复制代码代码如下:</p>
+<p>vararray = [“admin”,”manager”,”db”];<br>//给Array的原型添加一个name属性<br>Array.prototype.name = “zhangsan”;<br>for(var i =0 ; i&lt;array.length; i++){<br>alert(array[i]);<br>}; </p>
+<p>运行结果：<br>admin<br>manager<br>db </p>
+<p>——— for..in循环会把某个类型的原型(prototype)中方法与属性给遍历出来，所以这可能会导致代码中出现意外的错误。为了避免这个问题，我们可以使用对象的hasOwnProperty()方法来避免这个问题，如果对象的属性或方法是非继承的，那么hasOwnProperty() 方法返回true。<br>所以建议不要对数组执行for in循环，事实上，在高性能javascript这本书中,也强调了for in循环的不好,因为它总是会访问该对象的原型,看下原型上是否有属性,这在无意中就给遍历增加了额外的压力。</p>
+<p>vararray = [“admin”,”manager”,”db”];<br>Array.prototype.name= “zhangshan”;<br>for(vari in array){<br>//如果不是该对象自身直接创建的属性（也就是该属//性是原型中的属性），则跳过显示<br>if(!array.hasOwnProperty(i)){<br>continue;<br>}<br>alert(array[i]);<br>} </p>
+<p>运行结果：<br>admin<br>manager<br>db<br>注意事项：<br>1.有一部分浏览器,例如早期的safari浏览器,不支持这个方法</p>
+<p>2.对象经常被用作哈希值,这就是存在hasOwnProperty被另外的属性屏蔽的风险（但是我估计没有人那么无聊使用这个属性）</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/循环/" rel="tag">#循环</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/19/about-gulp-post/" rel="next" title="gulp的配置及使用教程">
+                <i class="fa fa-chevron-left"></i> gulp的配置及使用教程
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -267,8 +379,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/touxiang.png"
@@ -311,6 +432,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -407,6 +539,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
