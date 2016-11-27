@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="跨域," />
 
 
 
@@ -84,16 +84,20 @@
 
 
 
-<meta name="description" content="No matter how you feel. Get up, dress up, show up, and never give up.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="跨域请求的两种常见方式使用php进行cors跨域：使用jsonp进行跨域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于跨域">
+<meta property="og:url" content="http://yoursite.com/2016/03/28/cross-domain/index.html">
 <meta property="og:site_name" content="xieling's Blog">
-<meta property="og:description" content="No matter how you feel. Get up, dress up, show up, and never give up.">
-<meta property="og:updated_time" content="2016-11-19T09:23:42.637Z">
+<meta property="og:description" content="跨域请求的两种常见方式使用php进行cors跨域：使用jsonp进行跨域">
+<meta property="og:image" content="http://yoursite.com/img/crossImage1.png">
+<meta property="og:image" content="http://yoursite.com/img/crossImage2.png">
+<meta property="og:image" content="http://yoursite.com/img/crossImage3.png">
+<meta property="og:updated_time" content="2016-11-27T07:49:38.989Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="No matter how you feel. Get up, dress up, show up, and never give up.">
+<meta name="twitter:title" content="关于跨域">
+<meta name="twitter:description" content="跨域请求的两种常见方式使用php进行cors跨域：使用jsonp进行跨域">
+<meta name="twitter:image" content="http://yoursite.com/img/crossImage1.png">
 
 
 
@@ -111,13 +115,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    tags | xieling's Blog
-  
-</title>
+  <title> 关于跨域 | xieling's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CH">
@@ -138,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -228,9 +226,144 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于跨域
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-03-28T22:01:51+08:00" content="2016-03-28">
+              2016-03-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-    
+      
+
+      
+        <h2 id="跨域请求的两种常见方式"><a href="#跨域请求的两种常见方式" class="headerlink" title="跨域请求的两种常见方式"></a>跨域请求的两种常见方式</h2><p><strong>使用php进行cors跨域：</strong><br><strong>使用jsonp进行跨域</strong></p>
+<a id="more"></a>
+<p><strong>1.使用php进行cors跨域：</strong></p>
+<p>第一步：指定域名跨域<br>所有域名跨域：header(‘Access-Control-Allow-Origin: *’)<br>指定域名跨域：header(‘Access-Control-Allow-Origin:url网址’)</p>
+<p>第二步：设置跨域方式 GET/POST<br>header(‘Access-Control-Allow-Origin:GET’)</p>
+<p>第三步：设置跨域访问的路径 url</p>
+<p>第四步：file_get_contents 成功返回的数据</p>
+<p>第五步：echo 返回数据</p>
+<p><img src="img/crossImage1.png" alt="跨域"></p>
+<p><img src="img/crossImage2.png" alt="跨域"></p>
+<p><strong>2.使用jsonp进行跨域</strong></p>
+<p>前后端配合，ajax请求的地址为jsonp的地址，dataType:jsonp</p>
+<p><img src="img/crossImage3.png" alt="跨域"></p>
+<p>常见跨域方式：jsonp,cors,postMessage,iframe + window.name,socket</p>
+<p><em>跨域总结：</em></p>
+<p><strong>JSONP</strong> 跨域方式 比较简单 只是声明一个类型JSONP</p>
+<p><strong>JSONP</strong> 请求跨域的连接，还是原来的连接</p>
+<p><strong>cors:</strong></p>
+<p>1.url请求的连接是服务器的地址</p>
+<p>2.让服务器origin 进行跨域 同源策略</p>
+<p>3.设置后台的跨域方式</p>
+<p>4.返回数据</p>
+<p>5.前台读取数据</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/跨域/" rel="tag">#跨域</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/12/my-first-post/" rel="next" title="我的第一篇博客">
+                <i class="fa fa-chevron-left"></i> 我的第一篇博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/19/for-for in/" rel="prev" title="for跟for in循环的区别">
+                for跟for in循环的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -262,8 +395,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/touxiang.png"
@@ -306,6 +448,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域请求的两种常见方式"><span class="nav-number">1.</span> <span class="nav-text">跨域请求的两种常见方式</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -402,6 +555,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

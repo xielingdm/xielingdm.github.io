@@ -1,0 +1,717 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="gulp," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="先说一个npm的概念 npm – node提供的供下载的地方相当于应用商店">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp的配置及使用教程">
+<meta property="og:url" content="http://yoursite.com/2016/05/21/about-gulp-post/index.html">
+<meta property="og:site_name" content="xieling's Blog">
+<meta property="og:description" content="先说一个npm的概念 npm – node提供的供下载的地方相当于应用商店">
+<meta property="og:image" content="http://yoursite.com/img/gulp1.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp2.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp3.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp4.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp5.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp6.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp7.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp8.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp9.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp10.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp11.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp12.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp13.png">
+<meta property="og:image" content="http://yoursite.com/img/gulp14.png">
+<meta property="og:updated_time" content="2016-11-27T07:49:47.759Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp的配置及使用教程">
+<meta name="twitter:description" content="先说一个npm的概念 npm – node提供的供下载的地方相当于应用商店">
+<meta name="twitter:image" content="http://yoursite.com/img/gulp1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> gulp的配置及使用教程 | xieling's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CH">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">xieling's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                gulp的配置及使用教程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-05-21T22:01:51+08:00" content="2016-05-21">
+              2016-05-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="先说一个npm的概念"><a href="#先说一个npm的概念" class="headerlink" title="先说一个npm的概念"></a>先说一个npm的概念</h4><p> <strong>npm</strong> – node提供的供下载的地方相当于应用商店</p>
+<a id="more"></a>
+<h3 id="一、安装gulp之前先安装配置nodejs-gt"><a href="#一、安装gulp之前先安装配置nodejs-gt" class="headerlink" title="一、安装gulp之前先安装配置nodejs &gt;"></a>一、安装gulp之前先安装配置nodejs &gt;</h3><p>1.安装node.js   直接next下一步，在cmd输入  node -v 如果能出现类似 v6.0.0  版本号则node安装成功</p>
+<p><strong>二、安装gulp &gt;</strong></p>
+<h3 id="第一种方式："><a href="#第一种方式：" class="headerlink" title="第一种方式："></a>第一种方式：</h3><h3 id="第一步：安装淘宝镜像-："><a href="#第一步：安装淘宝镜像-：" class="headerlink" title="第一步：安装淘宝镜像 ："></a>第一步：安装淘宝镜像 ：</h3><h2 id="npm-install-g-cnpm-–registry-https-registry-npm-taobao-org"><a href="#npm-install-g-cnpm-–registry-https-registry-npm-taobao-org" class="headerlink" title="npm install -g cnpm –registry=https://registry.npm.taobao.org"></a>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></h2><p>因为npm安装插件是从国外服务器下载，受网络影响大，可能出现异常，如果npm的服务器在中国就好了<br>淘宝镜像可装可不装(国内服务器)  cnpm -v  查看<br>注：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）。</p>
+<h3 id="第二步：利用Cnpm-工具对gulp进行全局安装-：-Cnpm-install-gulp-g"><a href="#第二步：利用Cnpm-工具对gulp进行全局安装-：-Cnpm-install-gulp-g" class="headerlink" title="第二步：利用Cnpm 工具对gulp进行全局安装 ： Cnpm install gulp -g"></a>第二步：利用Cnpm 工具对gulp进行全局安装 ： Cnpm install gulp -g</h3><h3 id="第三步-：-输入gulp-v-查看版本号-出现版本号即为正确安装"><a href="#第三步-：-输入gulp-v-查看版本号-出现版本号即为正确安装" class="headerlink" title="第三步 ： 输入gulp -v 查看版本号,出现版本号即为正确安装"></a>第三步 ： 输入gulp -v 查看版本号,出现版本号即为正确安装</h3><p><img src="img/gulp1.png" alt="gulp"></p>
+<h3 id="第四步："><a href="#第四步：" class="headerlink" title="第四步："></a>第四步：</h3><p>进入需要的文件夹<br>例如： 在D盘(随便哪个盘)建立一个文件夹gulp<br>在cmd中输入 D：    cd  gulp进入这个文件夹</p>
+<h3 id="第五步-：-安装局部环境gulp-：-cnpm-install-gulp"><a href="#第五步-：-安装局部环境gulp-：-cnpm-install-gulp" class="headerlink" title="第五步 ： 安装局部环境gulp ： cnpm install gulp"></a>第五步 ： 安装局部环境gulp ： cnpm install gulp</h3><h3 id="第六步-：创建package-json文件，输入-cnpm-init-敲回车"><a href="#第六步-：创建package-json文件，输入-cnpm-init-敲回车" class="headerlink" title="第六步 ：创建package.json文件，输入 cnpm init  敲回车 -"></a>第六步 ：创建package.json文件，输入 cnpm init  敲回车 -</h3><p>在路径  下会形成这样的一个.json文件（部分内容为后添加的）</p>
+<pre><code>{
+  &quot;name&quot;: &quot;gulptest&quot;,//项目名称（必须）
+  &quot;version&quot;: &quot;0.0.1&quot;,//项目版本（必须）
+  &quot;description&quot;: &quot;这是一个gulp的测试程序&quot;,//项目描述（必须）
+&quot;homepage&quot;: &quot;&quot;,   //项目主页
+  &quot;main&quot;: &quot;index.js&quot;,//入口文件
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+  &quot;keywords&quot;: [//关键词
+    &quot;gulp&quot;
+  ],
+  &quot;author&quot;: &quot;wuxunxun007&quot;,//作者
+  &quot;license&quot;: &quot;ISC&quot;//项目许可协议
+&quot;devDependencies&quot;: {    //项目依赖的插件
+    &quot;gulp&quot;: &quot;^3.8.11&quot;,
+    &quot;gulp-less&quot;: &quot;^3.0.0&quot;
+  }
+}
+</code></pre><p>查看package.json帮助文档，命令提示符执行<strong>cnpm help package.json</strong><br><img src="img/gulp2.png" alt="gulp">  </p>
+<h3 id="第七步：本地安装gulp插件"><a href="#第七步：本地安装gulp插件" class="headerlink" title="第七步：本地安装gulp插件"></a>第七步：本地安装gulp插件</h3><p><strong><a href="http://gulpjs.com/plugins/" target="_blank" rel="external">http://gulpjs.com/plugins/</a> 插件官网。</strong></p>
+<p>将插件安装到本地之后， 要require之后才可以正常使用插件。</p>
+<p>下面以<strong>gulp-less</strong>为例：(更多插件将在下面展示)</p>
+<p><strong>1.cmd- -执行    cnpm install  gulp-less</strong></p>
+<p>—将会安装在 node_modules 的gulp-less目录下，该目录下有一个gulp-less的使用帮助文档README.md;</p>
+<p><strong>2.创建文件 </strong> 在目录中创建src文件夹，在该文件夹中创建less文件夹和css文件夹</p>
+<p>在less文件中创建一个index.less文件，写一些代码</p>
+<p><strong>3.在项目的根目录下创建一个 gulpfile.js 文件</strong></p>
+<p>在该文件写入<br><img src="img/gulp3.png" alt="gulp"></p>
+<p><strong>4.然后打开cmd窗口</strong>，<br>或者你安装了git环境的话，直接在该文件夹下右键点解Git Base Here，然后输入gulp命令，那么你就在你的src/css文件夹下就可以看到一个index.css文件，这个文件就是我们编译less文件之后生成的一个css文件。</p>
+<h3 id="第八步：gulpfile-js-配置"><a href="#第八步：gulpfile-js-配置" class="headerlink" title="第八步：gulpfile.js 配置"></a>第八步：gulpfile.js 配置</h3><p><strong>1.gulp.task( )</strong> 方法，这个方法接收两个参数。</p>
+<pre><code>gulp.task （‘指令’，‘function函数‘）；
+</code></pre><p>首先引入gulp,利用require引入。<br>    var gulp = require(‘gulp’);</p>
+<p>接下来为gulp配置一个hello指令<br>    gulp.task(‘hello’,function(){<br>          console.log(‘hello，world’)；<br>    })</p>
+<p><img src="img/gulp4.png" alt="gulp"></p>
+<p>当我在命令行中输入<strong>gulp hello</strong> 的时候，那么我们的gulp会替我们执行 这个函数， 我们在这个函数上console.log了一个 hello 。 执行结果如下:</p>
+<p><img src="img/gulp5.png" alt="gulp"></p>
+<p>第二个很有用的命令是<strong>default</strong>,这不是一个自定义的指令了。而是代表某个指令的执行， defualt 代表默认情况下执行[‘hello’]代表的是要执行哪个函数</p>
+<pre><code>gulp.(&apos;default&apos;,[&apos;hello&apos;]);
+</code></pre><p>在命令行中执行 gulp,并不使用命令名的时候， 会执行默认的函数， 也就是hello函数。</p>
+<h2 id="2-用gulp进行文件拷贝"><a href="#2-用gulp进行文件拷贝" class="headerlink" title="2.用gulp进行文件拷贝"></a>2.用gulp进行文件拷贝</h2><p>先学习三个方法</p>
+<p><strong>gulp.src(‘’)这个方法代表找到源文件路径。 </strong></p>
+<p><strong>.pipe() 这个方法用来执行gulp 中的各种方法。</strong></p>
+<p><strong>gulp.dest(‘dist’)//代表将文件保存在哪里。</strong></p>
+<p>注意，gulp 是允许连缀的， 在这里我们用连缀的写法去编辑我们的命令。</p>
+<pre><code>var gulp = require(&apos;gulp&apos;);
+
+gulp.task(&apos;index&apos;,function(){
+
+     //找到源文件      pipe()//使用功能 可以传入一个参数作为目标    gulp.dest()会保存到对应文件夹
+     return gulp.src(&apos;index.html&apos;).pipe(gulp.dest(&apos;dist&apos;))
+
+});
+</code></pre><p>在这个语句执行结束之后那， 我们在命令行中得到的结果是: </p>
+<p><img src="img/gulp6.png" alt="gulp"></p>
+<p>会告诉你执行结束的时间，会告诉你执行的结果。 </p>
+<p>我们在项目文件夹中可以看到 多出了一个文件夹，文件夹下有一个拷贝过来的index.html。</p>
+<p><img src="img/gulp7.png" alt="gulp"></p>
+<p>命令行中， 输入 index 这个时候就可以copy 到dist文件夹下了。</p>
+<h2 id="3-用gulp进行图片拷贝"><a href="#3-用gulp进行图片拷贝" class="headerlink" title="3.用gulp进行图片拷贝"></a>3.用gulp进行图片拷贝</h2><p>项目应用， 我们可以通过刚刚学习的拷贝命令去拷贝其他项目中的文件， 包括项目中的图片</p>
+<pre><code>gulp.task(&apos;images&apos;,function(){
+
+     return gulp.src(&apos;images/*.jpg&apos;).pipe(gulp.dest(&apos;dist/images&apos;))//*代表所有
+
+})
+</code></pre><p>拷贝多种文件及文件夹：</p>
+<p>1.拷贝多种后缀名 将 <strong>gulp.src(‘images/*.{jpg,png}’)</strong>写入文件中</p>
+<p>2.如果要拷贝文件夹下所有内容，那么可以 将<strong>gulp.src(‘images/<em>/</em>‘)</strong> 写入文件中 可以成功进行拷贝。 如果要拷贝所有的话， 可以使用 images/<em>*/</em> 去表示当前images文件夹下所有的内容全部进行拷贝。</p>
+<h2 id="4-多文件合并"><a href="#4-多文件合并" class="headerlink" title="4.多文件合并"></a>4.多文件合并</h2><p>将两个文件夹拷贝到同一个目标文件夹下。 这个时候那， 我们将文件源叫做glub ， 那么这个时候我们拷贝两个及两个以上源的时候那， 叫做多个源文件的拷贝。</p>
+<p> 我们需要更改的也就是 <strong>gulp.src([‘json/<em>.json’,’xml/</em>.xml’]);</strong></p>
+<p>这样我们就可以对文件进行一个更改了</p>
+<pre><code>gulp.task(&apos;data&apos;,function(){
+    return gulp.src([&apos;xml/*.list&apos;,&apos;json/*.json&apos;]).pipe(gulp.dest(&apos;dist/data&apos;))
+})
+</code></pre><h2 id="5-排除-！"><a href="#5-排除-！" class="headerlink" title="5.排除 ！"></a>5.排除 ！</h2><pre><code>return gulp.src([&apos;xml/*.xml&apos;,&apos;json/*.json&apos;,&apos;!json/secret.json&apos;]).pipe(gulp.dest(&apos;dist/data&apos;))
+</code></pre><p>返回除了json文件夹下的secret.json文件的所有文件</p>
+<h2 id="6-任务合并执行；（如何将以上命令一次性执行）"><a href="#6-任务合并执行；（如何将以上命令一次性执行）" class="headerlink" title="6.任务合并执行；（如何将以上命令一次性执行）"></a>6.任务合并执行；（如何将以上命令一次性执行）</h2><pre><code>gulp.task(&apos;build&apos;,[&apos;index-copy&apos;,&apos;image-copy&apos;,&apos;data&apos;],function(){
+
+console.log(&apos;编译成功&apos;)
+})
+</code></pre><h2 id="7-侦测文件变化，-自动执行任务；"><a href="#7-侦测文件变化，-自动执行任务；" class="headerlink" title="7.侦测文件变化， 自动执行任务；"></a>7.侦测文件变化， 自动执行任务；</h2><pre><code>gulp.watch()
+
+gulp.task(&apos;watch&apos;,function(){
+gulp.watch(&apos;index.html&apos;,[&apos;index-copy&apos;]);
+gulp.watch(&apos;images/**/*&apos;,[&apos;images-copy&apos;]);
+gulp.watch([&apos;json/*.json&apos;,&apos;xml/*.xml&apos;,&apos;!json/secret.json&apos;],[&apos;data&apos;]);
+                  //更改的文件                                                   //执行的方法
+})
+</code></pre><p>侦测自动执行，如果文件发生改变那么将执行对应任务。 </p>
+<p> 注：(假如要构建第二个项目，<br>    1.新建一个文件夹，同样配置局部gulp环境，执行以上的局部gulp环境步骤<br>     2.或者，在gulpfile.js文件下新建命令<br>     例如，有了一个style.less文件<br>                var less = require(‘gulp-less’),<br>                gulp.task(‘less’,function(){<br>                      return gulp.src(“src/less/style.less”)<br>                                 .pipe(less())<br>                                 .pipe(gulp.dest(“src/css”));<br>                 })<br>            现在要在创建一个style1.less文件，<br>                gulp.task(‘less1’,function(){<br>                      return gulp.src(“src/less/style1.less”)<br>                                 .pipe(less())<br>                                 .pipe(gulp.dest(“src/css”));<br>                 })</p>
+<p> <img src="img/gulp8.png" alt="gulp"></p>
+<p><img src="img/gulp9.png" alt="gulp"></p>
+<p><strong> 3.或者，将两个less文件写到一个命令里，同时创建命令和监听</strong></p>
+<p><img src="img/gulp10.png" alt="gulp"></p>
+<p>下面介绍</p>
+<h2 id="gulp插件"><a href="#gulp插件" class="headerlink" title="gulp插件"></a>gulp插件</h2><h3 id="1-gulpsass-即时sass编译插件"><a href="#1-gulpsass-即时sass编译插件" class="headerlink" title="1.gulpsass 即时sass编译插件"></a>1.gulpsass 即时sass编译插件</h3><p>npm install gulp-sass 就可以使用了。 </p>
+<p>现在环境中引入gulp-sass  &gt;  var sass = require(‘gulp-sass’);</p>
+<p>gulp.task(‘sass’,function(){<br>    return gulp.src(‘stylesheet/<em>*/</em>.scss’).pipe(sass()).pipe(gulp.dest(‘dist/css’))<br>})</p>
+<p><img src="img/gulp11.png" alt="gulp"></p>
+<p>这样我们调用 sass命令就可以对相应的代码进行编译了。</p>
+<h3 id="2-gulpless-即时less编译插件"><a href="#2-gulpless-即时less编译插件" class="headerlink" title="2.gulpless 即时less编译插件"></a>2.gulpless 即时less编译插件</h3><p>npm install gulp-less 就可以使用了。 </p>
+<p>现在环境中引入gulp-less  &gt;  var less = require(‘gulp-less’);</p>
+<p>gulp.task(‘less’,function(){<br>    return gulp.src(‘stylesheet/<em>*/</em>less’).pipe(less()).pipe(gulp.dest(‘dist/css’))<br>})</p>
+<p>这样我们调用 sass命令就可以对相应的代码进行编译了。</p>
+<h3 id="3-gulp-创建本地服务"><a href="#3-gulp-创建本地服务" class="headerlink" title="3.gulp 创建本地服务"></a>3.gulp 创建本地服务</h3><p>gulp connect </p>
+<p>npm install gulp-connect 就可以使用了。 </p>
+<p>配置端口号， 服务器名称；</p>
+<p>gulp.task(‘server’,function(){<br>    connect.server({<br>        root:’dist’,  //以谁为服务器根目录<br>        port:8888  // 端口号<br>    });<br>})</p>
+<p>默认端口：Server started <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a></p>
+<p>修改文件后自动刷新。 </p>
+<p>gulp.task(‘server’,function(){<br>    connect.server({<br>        root:’dist’<br>    });<br>})</p>
+<p>这时候我们需要开启服务器的同时，再去执行 watch那么我们这时候需要创建一个默认的任务；</p>
+<p>如果需要实时更新数据，那么需要添加一个参数livereload:true<br>gulp.task(‘server’,function(){</p>
+<pre><code>connect.server({
+    root:&apos;dist&apos;,
+    livereload:true
+});
+</code></pre><p>})</p>
+<p>gulp.task(‘index-copy’,function(){</p>
+<pre><code>return gulp.src(&apos;index.html&apos;).pipe(gulp.dest(&apos;dist&apos;)).pipe(connect.reload());
+</code></pre><p>})<br>gulp.task(‘default’,[‘server’,’watch’])</p>
+<p><img src="img/gulp12.png" alt="gulp"></p>
+<h3 id="4-gulp合并插件-gulp-concat"><a href="#4-gulp合并插件-gulp-concat" class="headerlink" title="4.gulp合并插件 gulp-concat"></a>4.gulp合并插件 gulp-concat</h3><p>用于合并js文件；</p>
+<p>gulp.task(‘scripts’,function(){<br>    return gulp.src([‘scripts/hz.js’,’scripts/index.js’]).pipe(concat(‘vendor.js’)).pipe(gulp.dest(‘dist/js’))<br>})</p>
+<h3 id="5-gulp代码压缩插件-gulp-uglify-："><a href="#5-gulp代码压缩插件-gulp-uglify-：" class="headerlink" title="5.gulp代码压缩插件 gulp-uglify ："></a>5.gulp代码压缩插件 gulp-uglify ：</h3><p>gulp.task(‘scripts’,function(){<br>    return gulp.src([‘scripts/hz.js’,’scripts/index.js’]).pipe(concat(‘vendor.js’)).pipe(uglify()).pipe(gulp.dest(‘dist/js’))<br>})</p>
+<p>我们是否可以保存两份js文件，一份已经压缩，另一份没有压缩的那？</p>
+<p><img src="img/gulp13.png" alt="gulp"></p>
+<h3 id="6-重命名-；-gulp-rename插件；"><a href="#6-重命名-；-gulp-rename插件；" class="headerlink" title="6.  重命名 ； gulp rename插件；"></a>6.  重命名 ； gulp rename插件；</h3><p>gulp.task(‘scripts’,function(){<br>    return gulp.src([‘scripts/hz.js’,’scripts/index.js’])<br>        .pipe(concat(‘vendor.js’))<br>        .pipe(gulp.dest(‘dist/js’))<br>        .pipe(uglify())<br>        .pipe(rename(‘vendor.min.js’))<br>        .pipe(gulp.dest(‘dist/js’))<br>})</p>
+<h3 id="7-css压缩-gulp-minify-css"><a href="#7-css压缩-gulp-minify-css" class="headerlink" title="7.css压缩  gulp-minify-css"></a>7.css压缩  gulp-minify-css</h3><p>gulp.task(‘sass’,function(){<br>    return gulp.src(‘stylesheet/<em>*/</em>.scss’).pipe(sass()).pipe(minifyCSS()).pipe(gulp.dest(‘dist/css’))<br>})</p>
+<h3 id="8-图片压缩；-gulp-imagemin插件；"><a href="#8-图片压缩；-gulp-imagemin插件；" class="headerlink" title="8. 图片压缩； gulp-imagemin插件；"></a>8. 图片压缩； gulp-imagemin插件；</h3><p>gulp.task(‘image-copy’,function(){</p>
+<pre><code>return gulp.src(&apos;images/**/*&apos;).pipe(imagemin()).pipe(gulp.dest(&apos;dist/images&apos;))
+</code></pre><p>})</p>
+<p>在代码压缩结束之后那， 会给你一个提示， 告诉你节省了多少的空间；</p>
+<p><img src="img/gulp14.png" alt="gulp"></p>
+<h2 id="第二种方式：不安装淘宝镜像，直接使用npm"><a href="#第二种方式：不安装淘宝镜像，直接使用npm" class="headerlink" title="第二种方式：不安装淘宝镜像，直接使用npm"></a>第二种方式：不安装淘宝镜像，直接使用npm</h2><p>第一步：利用npm对gulp进行全局安装 ： npm install gulp -g</p>
+<p>第二步 ： 输入gulp -v 查看版本号</p>
+<p>以下步骤同上安装</p>
+<p> 建议配置npm(国外服务器)</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/gulp/" rel="tag">#gulp</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/19/for-for in/" rel="next" title="for跟for in循环的区别">
+                <i class="fa fa-chevron-left"></i> for跟for in循环的区别
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/touxiang.png"
+               alt="xieling" />
+          <p class="site-author-name" itemprop="name">xieling</p>
+          <p class="site-description motion-element" itemprop="description">No matter how you feel. Get up, dress up, show up, and never give up.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#先说一个npm的概念"><span class="nav-number">1.</span> <span class="nav-text">先说一个npm的概念</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、安装gulp之前先安装配置nodejs-gt"><span class="nav-number"></span> <span class="nav-text">一、安装gulp之前先安装配置nodejs ></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种方式："><span class="nav-number"></span> <span class="nav-text">第一种方式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：安装淘宝镜像-："><span class="nav-number"></span> <span class="nav-text">第一步：安装淘宝镜像 ：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-install-g-cnpm-–registry-https-registry-npm-taobao-org"><span class="nav-number"></span> <span class="nav-text">npm install -g cnpm –registry=https://registry.npm.taobao.org</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：利用Cnpm-工具对gulp进行全局安装-：-Cnpm-install-gulp-g"><span class="nav-number"></span> <span class="nav-text">第二步：利用Cnpm 工具对gulp进行全局安装 ： Cnpm install gulp -g</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步-：-输入gulp-v-查看版本号-出现版本号即为正确安装"><span class="nav-number"></span> <span class="nav-text">第三步 ： 输入gulp -v 查看版本号,出现版本号即为正确安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步："><span class="nav-number"></span> <span class="nav-text">第四步：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五步-：-安装局部环境gulp-：-cnpm-install-gulp"><span class="nav-number"></span> <span class="nav-text">第五步 ： 安装局部环境gulp ： cnpm install gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六步-：创建package-json文件，输入-cnpm-init-敲回车"><span class="nav-number"></span> <span class="nav-text">第六步 ：创建package.json文件，输入 cnpm init  敲回车 -</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七步：本地安装gulp插件"><span class="nav-number"></span> <span class="nav-text">第七步：本地安装gulp插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八步：gulpfile-js-配置"><span class="nav-number"></span> <span class="nav-text">第八步：gulpfile.js 配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-用gulp进行文件拷贝"><span class="nav-number"></span> <span class="nav-text">2.用gulp进行文件拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-用gulp进行图片拷贝"><span class="nav-number"></span> <span class="nav-text">3.用gulp进行图片拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-多文件合并"><span class="nav-number"></span> <span class="nav-text">4.多文件合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-排除-！"><span class="nav-number"></span> <span class="nav-text">5.排除 ！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-任务合并执行；（如何将以上命令一次性执行）"><span class="nav-number"></span> <span class="nav-text">6.任务合并执行；（如何将以上命令一次性执行）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-侦测文件变化，-自动执行任务；"><span class="nav-number"></span> <span class="nav-text">7.侦测文件变化， 自动执行任务；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp插件"><span class="nav-number"></span> <span class="nav-text">gulp插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-gulpsass-即时sass编译插件"><span class="nav-number"></span> <span class="nav-text">1.gulpsass 即时sass编译插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-gulpless-即时less编译插件"><span class="nav-number"></span> <span class="nav-text">2.gulpless 即时less编译插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-gulp-创建本地服务"><span class="nav-number"></span> <span class="nav-text">3.gulp 创建本地服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-gulp合并插件-gulp-concat"><span class="nav-number"></span> <span class="nav-text">4.gulp合并插件 gulp-concat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-gulp代码压缩插件-gulp-uglify-："><span class="nav-number"></span> <span class="nav-text">5.gulp代码压缩插件 gulp-uglify ：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-重命名-；-gulp-rename插件；"><span class="nav-number"></span> <span class="nav-text">6.  重命名 ； gulp rename插件；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-css压缩-gulp-minify-css"><span class="nav-number"></span> <span class="nav-text">7.css压缩  gulp-minify-css</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-图片压缩；-gulp-imagemin插件；"><span class="nav-number"></span> <span class="nav-text">8. 图片压缩； gulp-imagemin插件；</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种方式：不安装淘宝镜像，直接使用npm"><span class="nav-number"></span> <span class="nav-text">第二种方式：不安装淘宝镜像，直接使用npm</span></a></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xieling</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
