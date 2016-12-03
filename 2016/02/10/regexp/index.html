@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="循环," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="for跟for in循环的区别lis[ i ].index = i;   //自定义索引
-1.for循环  ： 迭代数组对象">
+<meta name="description" content="一.什么是正则表达式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="for跟for in循环的区别">
-<meta property="og:url" content="http://yoursite.com/2016/04/19/for-for in/index.html">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://yoursite.com/2016/02/10/regexp/index.html">
 <meta property="og:site_name" content="xieling's Blog">
-<meta property="og:description" content="for跟for in循环的区别lis[ i ].index = i;   //自定义索引
-1.for循环  ： 迭代数组对象">
-<meta property="og:updated_time" content="2016-11-27T07:42:22.040Z">
+<meta property="og:description" content="一.什么是正则表达式">
+<meta property="og:updated_time" content="2016-12-03T13:47:30.164Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="for跟for in循环的区别">
-<meta name="twitter:description" content="for跟for in循环的区别lis[ i ].index = i;   //自定义索引
-1.for循环  ： 迭代数组对象">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="一.什么是正则表达式">
 
 
 
@@ -114,7 +111,7 @@
   };
 </script>
 
-  <title> for跟for in循环的区别 | xieling's Blog </title>
+  <title> 正则表达式 | xieling's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CH">
@@ -244,7 +241,7 @@
             
             
               
-                for跟for in循环的区别
+                正则表达式
               
             
           </h1>
@@ -256,8 +253,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-04-19T22:01:51+08:00" content="2016-04-19">
-              2016-04-19
+            <time itemprop="dateCreated" datetime="2016-02-10T23:44:21+08:00" content="2016-02-10">
+              2016-02-10
             </time>
           </span>
 
@@ -284,48 +281,116 @@
       
 
       
-        <h2 id="for跟for-in循环的区别"><a href="#for跟for-in循环的区别" class="headerlink" title="for跟for in循环的区别"></a>for跟for in循环的区别</h2><p><strong>lis[ i ].index = i;   //自定义索引</strong></p>
-<p><strong>1.for循环  ： 迭代数组对象</strong></p>
-<a id="more"></a>
-<p><strong>2.for in循环</strong>： </p>
-<p><strong>用来迭代对象的属性或数组的每个元素，for…in循环中的循环计数器是字符串，而不是数字。</strong></p>
-<p>它包含当前属性的名称或当前数组元素的索引</p>
-<p> – 当遍历一个对象的时候，变量 i 也就是循环计数器 为 对象的属性名 </p>
-<p> – 当遍历一个数组的时候，变量 i 也就是循环计数器 为 当前数组元素的索引 </p>
-<p>注意：</p>
-<pre><code>var array =[&quot;admin&quot;,&quot;manager&quot;,&quot;db&quot;]; 
-//给Array的原型添加一个name属性 
-Array.prototype.name= &quot;zhangsan&quot;; 
-for(var i in array){ 
-alert(array[i]); 
-} 
-</code></pre><p>运行结果：<br>admin<br>manager<br>db<br>zhangsan </p>
-<p>现在，再看看使用 for循环会怎样？<br>复制代码代码如下:</p>
-<pre><code>var array = [&quot;admin&quot;,&quot;manager&quot;,&quot;db&quot;]; 
-//给Array的原型添加一个name属性 
-Array.prototype.name = &quot;zhangsan&quot;; 
-for(var i =0 ; i&lt;array.length; i++){ 
-alert(array[i]); 
-}; 
-</code></pre><p>运行结果：<br>admin<br>manager<br>db </p>
-<hr>
-<p><strong>for..in循环</strong>会把某个类型的原型(prototype)中方法与属性给遍历出来，所以这可能会导致代码中出现意外的错误。</p>
-<p>为了避免这个问题，我们可以使用对象的hasOwnProperty()方法来避免这个问题，如果对象的属性或方法是非继承的，那么hasOwnProperty() 方法返回true。</p>
-<p>所以建议不要对数组执行for in循环，事实上，在高性能javascript这本书中,也强调了for in循环的不好,因为它总是会访问该对象的原型,看下原型上是否有属性,这在无意中就给遍历增加了额外的压力。</p>
-<pre><code>var array = [&quot;admin&quot;,&quot;manager&quot;,&quot;db&quot;]; 
-Array.prototype.name= &quot;zhangshan&quot;; 
-for(vari in array){ 
-//如果不是该对象自身直接创建的属性（也就是该属//性是原型中的属性），则跳过显示 
-if(!array.hasOwnProperty(i)){ 
-continue; 
-} 
-alert(array[i]); 
-} 
-</code></pre><p>运行结果：<br>admin<br>manager<br>db </p>
-<p><strong>注意事项：</strong></p>
-<p>1.有一部分浏览器,例如早期的safari浏览器,不支持这个方法</p>
-<p>2.对象经常被用作哈希值,这就是存在hasOwnProperty被另外的属性屏蔽的风险（但是我估计没有人那么无聊使用这个属性）</p>
+        <h2 id="一-什么是正则表达式"><a href="#一-什么是正则表达式" class="headerlink" title="一.什么是正则表达式"></a>一.什么是正则表达式</h2><a id="more"></a> 
+<p>JavaScript最初诞生的目的是什么？</p>
+<p><strong>验证！</strong></p>
+<p>正则表达式和字符串配合的方法</p>
+<p>1.为什么要使用正则</p>
+<p>从杂乱字符串中找数字;</p>
+<pre><code>var str=&apos;dadf123dsafd33dfds;;;[]123dg;123&apos;
+var linshi=&apos;&apos;;
+var arr=[]
+for(var i = 0 ; i &lt; str .length ; i ++){
 
+ if(str.charAt(i)&gt;=0&amp;&amp;str.charAt(i)&lt;=9){
+     linshi+=str.charAt(i)
+ }else{
+      if(linshi!=&apos;&apos;){
+           arr.push(linshi)     
+      }
+  }
+}
+
+if(linshi!=&apos;&apos;){
+       arr.push(linshi)     
+}
+console.log(arr)
+</code></pre><p><strong>使用正则的方式那</strong>？？</p>
+<pre><code>var arr=str.match(/\d+/g);
+</code></pre><p>一个理念：任何程序都可以不用正则表达式写出来。 但是根据<strong>懒人原则</strong>，怎么做不言而喻。</p>
+<p>正则中的转义</p>
+<p>什么叫正则表达式？</p>
+<p>正则表达式其实就是一种规则，其实把正则称作规则表达式更为恰当。正则的语法基于一种古老的perl语言。 </p>
+<p><strong>邮箱的规则</strong></p>
+<p>123abc@qq.com</p>
+<p>中文或者数字+@+英文+.+英文</p>
+<p><em>正则的第一种写法</em></p>
+<pre><code>var reg=new RegExp(&apos;a&apos;)   
+
+var str=&apos;abcdefg&apos;
+
+alert(str.match(reg))
+</code></pre><p><em>正则表达式的第二种写法</em></p>
+<p>per风格   古老的语言</p>
+<pre><code>var re = /a/
+
+alert(str.re)
+</code></pre><p>匹配大小写不一样的字母怎么办？</p>
+<p>var re=new RegExp(‘a’,’i’)</p>
+<p>正则对象中有一个参数，可以传入对应的值，让正则不区分大小写；</p>
+<p><strong>i：忽略大小写</strong></p>
+<p>var re= /a/i</p>
+<p> \d：代表数字  </p>
+<p>match（）提取所有的想要的东西</p>
+<p>reg = /\d+/ g</p>
+<p>解释str.match(reg)</p>
+<p>g: 代表全局所有  （global）</p>
+<p>量词：</p>
+<p>+：若干（多少都可以）</p>
+<p>replace ：替换敏感词，终极版；（聊天案例）</p>
+<p>| : 或和js中的（||）</p>
+<p><strong>正则表达式中重要的部分</strong>：</p>
+<p>[ ]  元字符(中括号):</p>
+<p>小例子：</p>
+<p>匹配罩杯 zhaobei</p>
+<p>[abcde] 匹配</p>
+<p>[ a-z ]  匹配所有字母   </p>
+<p>[0-9]  ==  \ d </p>
+<p>长度：（身高）</p>
+<p>^:排除（除了）</p>
+<p>replace里的正则；&gt;&gt;&gt;&gt;屏蔽敏感词，完美版；</p>
+<p><strong>一个不推荐使用的符号</strong> <strong>.</strong>  代表所有</p>
+<p>HTML标签规则：</p>
+<p>/&lt;.+&gt;/</p>
+<p>尖括号里的东西不要</p>
+<p>正则的贪婪特性：</p>
+<p>过滤HTML标签的方法</p>
+<p>/&lt;[^&lt;&gt;]+&gt;/g</p>
+<p>正则中的 . 转义字符代表全部</p>
+<p>反选 [^0-9]</p>
+<p>转义字符：</p>
+<p>\d  —- [0-9]           数字</p>
+<p>\w —–[a-z0-9_]     数字，字母，下划线</p>
+<p>\s  —   空白字符</p>
+<p>\D  —–[^0-9]        非数字<br>\W —–[^a-z0-9_]     非数字，字母，下划线<br>\ S —–非空白字符      </p>
+<p>量词：（单位名称）</p>
+<p>{n}</p>
+<p>非0的九位的数字 [1-9]\d{8}</p>
+<p>{n,m} </p>
+<p>最少n次，最多m次；</p>
+<p>QQ号验证  [1-9]\d{4,10}</p>
+<p>{n,}    最少n次，最多不限</p>
+<ul>
+<li>{1,}</li>
+</ul>
+<p>?      {0,1} 可有可无</p>
+<p>固话规则  0421-6600656</p>
+<p>开头为0的2或者三位数字加上 - 开头为非零的八位数字结尾是1到4位的分机号</p>
+<p>(0\d{2,3}-)?[1-9]\d{7}(/d{1,4})?</p>
+<ul>
+<li>{0,} 可以有也可以没有 </li>
+</ul>
+<p><strong>邮箱验证：</strong></p>
+<p>中文转换成英文；</p>
+<p>英文数字下划线 @ 一串英文、数字 . 一串英文</p>
+<pre><code>/\w+@[a-z0-9]+\.[a-z]+/i
+</code></pre><p>想要校验怎么办 ? 在正则转义字符前加上\</p>
+<p>.test( )方法返回值是true 和false</p>
+<p>.test( ) 有一个特性，就是只要字符串的一部分复合要求，那么就会返回true</p>
+<p>^(不在中括号里)开头</p>
+<p>$结尾</p>
+<pre><code>/\w+@[a-z0-9]+\.[a-z]+/i
+</code></pre>
       
     </div>
 
@@ -344,27 +409,21 @@ alert(array[i]);
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/循环/" rel="tag">#循环</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/28/cross-domain/" rel="next" title="关于跨域">
-                <i class="fa fa-chevron-left"></i> 关于跨域
+              <a href="/2015/12/20/js-closure/" rel="next" title="js闭包">
+                <i class="fa fa-chevron-left"></i> js闭包
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/21/about-gulp-post/" rel="prev" title="gulp的配置及使用教程">
-                gulp的配置及使用教程 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/28/cross-domain/" rel="prev" title="关于跨域">
+                关于跨域 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -472,7 +531,7 @@ alert(array[i]);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#for跟for-in循环的区别"><span class="nav-number">1.</span> <span class="nav-text">for跟for in循环的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-什么是正则表达式"><span class="nav-number">1.</span> <span class="nav-text">一.什么是正则表达式</span></a></li></ol></div>
             
           </div>
         </section>

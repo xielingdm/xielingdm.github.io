@@ -1,0 +1,637 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="angular," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="我太佩服经常更新博客的巨巨了 ， 更一篇感觉要胖十斤，不说了 我吃个鸡腿补补Angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular教程2">
+<meta property="og:url" content="http://yoursite.com/2016/12/03/Angular2/index.html">
+<meta property="og:site_name" content="xieling's Blog">
+<meta property="og:description" content="我太佩服经常更新博客的巨巨了 ， 更一篇感觉要胖十斤，不说了 我吃个鸡腿补补Angular">
+<meta property="og:updated_time" content="2016-12-03T14:19:01.208Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular教程2">
+<meta name="twitter:description" content="我太佩服经常更新博客的巨巨了 ， 更一篇感觉要胖十斤，不说了 我吃个鸡腿补补Angular">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Angular教程2 | xieling's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CH">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">xieling's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Angular教程2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-12-03T21:54:39+08:00" content="2016-12-03">
+              2016-12-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="我太佩服经常更新博客的巨巨了-，-更一篇感觉要胖十斤，不说了-我吃个鸡腿补补"><a href="#我太佩服经常更新博客的巨巨了-，-更一篇感觉要胖十斤，不说了-我吃个鸡腿补补" class="headerlink" title="我太佩服经常更新博客的巨巨了 ， 更一篇感觉要胖十斤，不说了 我吃个鸡腿补补"></a>我太佩服经常更新博客的巨巨了 ， 更一篇感觉要胖十斤，不说了 我吃个鸡腿补补</h5><h2 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h2><a id="more"></a> 
+<h3 id="功能类工具方法"><a href="#功能类工具方法" class="headerlink" title="功能类工具方法"></a>功能类工具方法</h3><p><strong>version</strong> ：获取你当前angular 版本对象</p>
+<p><strong>equals</strong>：和jquery中的equals 非常相似 用于比较</p>
+<p>注意：</p>
+<pre><code>var a = NaN;  var b = NaN;  
+var result = angular.equals(a,b);
+console.log(result);  --   true
+</code></pre><p><strong>forEach</strong>：用于遍历数据</p>
+<pre><code>//value 和 index 顺序不能错
+angular.forEach(c,function(value,index){
+
+})
+</code></pre><p><strong>fromJson</strong> : 将字符串转换成json对象 相当于jquery中的parse</p>
+<p><strong>toJson</strong> ：将json对象转换成字符串</p>
+<h3 id="全局类方法"><a href="#全局类方法" class="headerlink" title="全局类方法"></a>全局类方法</h3><p><strong>run</strong>  方法是专门用来设置全局属性的 </p>
+<p> 它也只能设定$rootScope  不能设定$scope 作用域是当前的m1模块下</p>
+<hr>
+<h3 id="angular中的过滤器"><a href="#angular中的过滤器" class="headerlink" title="angular中的过滤器"></a>angular中的过滤器</h3><p>angular中使用过滤器需要一个管道符号 |</p>
+<p>angular中过滤器 使用功能很强大 可以自定义过滤器</p>
+<p>angular中有7个自带的过滤器 还可以自定义过滤</p>
+<p><strong>1.将数据过滤为金钱类型</strong></p>
+<pre><code>{{ text | currency：'￥'}}
+</code></pre><p>currency  – 默认$</p>
+<p><strong>2.将数据过滤成数字格式</strong></p>
+<pre><code>{{ text | number：3 }}   -- 截取几位小数
+</code></pre><p><strong>3.将数据转换成大小写</strong></p>
+<pre><code>$scope.info = $filter(&quot;uppercase&quot;)(&quot;xieling&quot;);   --  lowercase
+</code></pre><p><strong>4.美化json数据格式，没什么实际作用，就是为了让数据方便观看</strong></p>
+<pre><code>{{ text | json}}
+</code></pre><p><strong>5.将数据进行排序</strong></p>
+<pre><code>{{ text | orderBy："age" }}
+</code></pre><p><strong>6.将数据进行截取</strong></p>
+<pre><code>{{ text | limitTo：4 }}  -- 截取4位
+</code></pre><p><strong>7.将数据进行过滤</strong></p>
+<pre><code>{{ text | filter：'blue' }}  --过滤留下蓝色
+</code></pre><p><strong>8.angular 自定义过滤器</strong></p>
+<p>在m1这个module 下添加 一个  m1.filter&#40;&#41;</p>
+<pre><code>m1.filter(&quot;firstUpper&quot;,function( ){   //自定义过滤器的名称  回调函数
+ return function(str){   //传需要过滤的信息       自定义了一个首字母大写的过滤器
+      return str.charAt(0).toUpperCase( ) + str.substring( 1 );      
+}
+})
+然后在下面用这个自定义过滤器
+{{ text | firstUpper }} 
+</code></pre><hr>
+<h3 id="ng-repeat-循环指令"><a href="#ng-repeat-循环指令" class="headerlink" title="ng-repeat  循环指令"></a>ng-repeat  循环指令</h3><p>用于循环遍历的 说白了 就是帮你去拼接字符串</p>
+<p>####关于ng-repeat 其他的一些参数</p>
+<p><strong>$index</strong>   – 指你每个对应元素的下标  索引</p>
+<p><strong>$first</strong> –  返回的是布尔类型 若为第一个 则为真 其余为假</p>
+<p><strong>$last</strong> –  返回的是布尔类型 若为最后一个 则为真 其余为假</p>
+<p><strong>$middle</strong> –  返回的是布尔类型 若为中间 则为真 其余为假</p>
+<p><strong>$even</strong> –  返回的是布尔类型 若为偶数 则为真</p>
+<p><strong>$odd</strong> –  返回的是布尔类型 若为奇数 则为真</p>
+<p><strong>ng-repeat-start </strong></p>
+<p><strong>ng-repeat-end</strong></p>
+<p>–避免在外面嵌套一个div  相当于微信小程序的block</p>
+<p>如果dataList这个数组有重复的值[2,2,2,3,4,5],在低版本angular中使用data in dataList会报错  换成</p>
+<p><strong>data in dataList track by $index</strong></p>
+<hr>
+<h3 id="特殊事件指令"><a href="#特殊事件指令" class="headerlink" title="特殊事件指令"></a>特殊事件指令</h3><p><strong>ng-selected</strong> : 被选中事件指令</p>
+<p><strong>ng-change</strong>：chang事件触发和jquery中change事件的触发完全一致</p>
+<p><strong>ng-copy</strong>：复制或选中事件时触发</p>
+<p><strong>ng-cut</strong>：剪切时触发事件指令</p>
+<p><strong>ng-paste</strong>：粘贴时触发指令</p>
+<h3 id="状态类型指令"><a href="#状态类型指令" class="headerlink" title="状态类型指令"></a>状态类型指令</h3><p><strong>disabled  readOnly  checked</strong></p>
+<hr>
+<h3 id="样式指令和传参指令"><a href="#样式指令和传参指令" class="headerlink" title="样式指令和传参指令"></a>样式指令和传参指令</h3><p>模块依赖引入方式</p>
+<p>var m1 = angular.module&#40;”app”,[ngSanitize]&#41;;   ng+插件名称&#40;首字母大写&#41;</p>
+<p><strong>单个参数的传递</strong></p>
+<pre><code>&lt;p ng-bind=&quot;text&quot;&gt;&lt;/p&gt;
+</code></pre><p><strong>多个参数的传递</strong></p>
+<pre><code>&lt;p ng-bind-template=&quot;{{text1}},{{text2}}&quot;&gt;&lt;/p&gt;
+</code></pre><p><strong>传递标签(需要插件)</strong></p>
+<pre><code>&lt;p ng-bind-html=&quot;info&quot;&gt;&lt;/p&gt;
+</code></pre><p><strong>样式指令</strong></p>
+<pre><code>&lt;p ng-style=&quot;color&quot;&gt;这个color指controller下定义的变量&lt;/p&gt;
+
+&lt;p ng-class=&quot;{color:true}&quot;&gt;这个color指class类名 单引号&lt;/p&gt;
+</code></pre><h3 id="重写标签类型指令"><a href="#重写标签类型指令" class="headerlink" title="重写标签类型指令"></a>重写标签类型指令</h3><p><strong>ng-options</strong> ： 用于给你生成option 必须和 ng-model 一起使用</p>
+<h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><p>在angular中 除了它自带的一些指令外 还可以自定义</p>
+<p><strong>用m1.directive&#40;“参数指令名”，回调&#41;</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/angular/" rel="tag">#angular</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/13/Angular1/" rel="next" title="Angular教程1">
+                <i class="fa fa-chevron-left"></i> Angular教程1
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/touxiang.png"
+               alt="xieling" />
+          <p class="site-author-name" itemprop="name">xieling</p>
+          <p class="site-description motion-element" itemprop="description">No matter how you feel. Get up, dress up, show up, and never give up.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#我太佩服经常更新博客的巨巨了-，-更一篇感觉要胖十斤，不说了-我吃个鸡腿补补"><span class="nav-number">1.</span> <span class="nav-text">我太佩服经常更新博客的巨巨了 ， 更一篇感觉要胖十斤，不说了 我吃个鸡腿补补</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular"><span class="nav-number"></span> <span class="nav-text">Angular</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能类工具方法"><span class="nav-number"></span> <span class="nav-text">功能类工具方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局类方法"><span class="nav-number"></span> <span class="nav-text">全局类方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular中的过滤器"><span class="nav-number"></span> <span class="nav-text">angular中的过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ng-repeat-循环指令"><span class="nav-number"></span> <span class="nav-text">ng-repeat  循环指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊事件指令"><span class="nav-number"></span> <span class="nav-text">特殊事件指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态类型指令"><span class="nav-number"></span> <span class="nav-text">状态类型指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式指令和传参指令"><span class="nav-number"></span> <span class="nav-text">样式指令和传参指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重写标签类型指令"><span class="nav-number"></span> <span class="nav-text">重写标签类型指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义指令"><span class="nav-number"></span> <span class="nav-text">自定义指令</span></a></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xieling</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
